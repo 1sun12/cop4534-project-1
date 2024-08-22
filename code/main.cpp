@@ -6,10 +6,12 @@
   Other comments regarding the file - description of why it is there, etc.
 ***************************************************************/
 
-#include <iostream>
+#include "FileManager.hpp"
 
 int main() {
-  std::cout << "Hello World!";
+  FileManager fm;
+
+  fm.printInputFile();
 
   return 0;
 }
