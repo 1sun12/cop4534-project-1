@@ -7,6 +7,7 @@
 class FileManager {
     public:
         FileManager();
+        std::string nextLine();
         void printInputFile();
     private:
         std::ifstream ifs;

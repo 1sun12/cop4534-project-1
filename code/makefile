@@ -5,10 +5,10 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall
 
 # Define the source files
-SRCS = main.cpp FileManager.cpp
+SRCS = main.cpp FileManager.cpp RandomPassGen.cpp
 
 # Define the header files
-HEADERS = FileManager.hpp
+HEADERS = FileManager.hpp RandomPassGen.hpp
 
 # Define the object files
 OBJS = $(SRCS:.cpp=.o)
