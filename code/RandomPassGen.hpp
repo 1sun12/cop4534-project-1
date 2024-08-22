@@ -10,7 +10,6 @@ class RandomPassGen {
         RandomPassGen();
         std::string generateRandomPw();
     private:
-        std::string password;
         char randomChar;
 };
 

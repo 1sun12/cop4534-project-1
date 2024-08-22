@@ -14,8 +14,7 @@ int main() {
   RandomPassGen gm;
 
   //fm.printInputFile();
-  std::string temp = gm.generateRandomPw();
-  std::cout << temp << std::endl;
+  fm.writeRawData();
 
   return 0;
 }
