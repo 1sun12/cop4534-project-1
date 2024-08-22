@@ -4,13 +4,13 @@
 RandomPassGen::RandomPassGen() {
     password = "";
     randomChar = 0;
+    srand(time(0));
 }
 
 std::string RandomPassGen::generateRandomPw() {
     for (int i = 0; i < 9; i++) {
-        randomChar = rand() % 126 + 1;
+        randomChar = rand() % 95 + 32;
         password += randomChar;
-        std::cout << password << std::endl;
     }
 
     return password;
