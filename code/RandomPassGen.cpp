@@ -9,7 +9,7 @@ RandomPassGen::RandomPassGen() {
 
 std::string RandomPassGen::generateRandomPw() {
     for (int i = 0; i < 9; i++) {
-        randomChar = rand() % 95 + 32;
+        randomChar = rand() % 25 + 98;
         password += randomChar;
     }
 
