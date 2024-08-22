@@ -7,11 +7,14 @@
 ***************************************************************/
 
 #include "FileManager.hpp"
+#include "RandomPassGen.hpp"
 
 int main() {
   FileManager fm;
+  RandomPassGen gm;
 
-  fm.printInputFile();
+  //fm.printInputFile();
+  gm.generateRandomPw();
 
   return 0;
 }
