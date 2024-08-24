@@ -8,10 +8,12 @@
 
 #include "FileManager.hpp"
 #include "RandomPassGen.hpp"
+#include "Cipher.hpp"
 
 int main() {
   FileManager fm;
   RandomPassGen gm;
+  Cipher cp;
 
   //fm.printInputFile();
   fm.writeRawData();

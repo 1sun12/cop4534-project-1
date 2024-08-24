@@ -5,9 +5,10 @@
 class Cipher {
     public:
         Cipher();
-        std::string generateKey();
-        std::string cipher();
+        std::string scramble(std::string);
     private:
+        std::string key;
+        int* keyToInt; // dynamic allocated array of integers
 };
 
 #endif
