@@ -16,7 +16,8 @@ int main() {
   Cipher cp;
 
   //fm.printInputFile();
-  fm.writeRawData();
+  //fm.writeRawData();
+  cp.scramble("yahoo");
 
   return 0;
 }
