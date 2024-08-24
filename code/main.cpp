@@ -17,7 +17,7 @@ int main() {
 
   //fm.printInputFile();
   //fm.writeRawData();
-  cp.scramble("boblovesapples");
+  std::cout << cp.scramble("banana") << std::endl;
 
   return 0;
 }

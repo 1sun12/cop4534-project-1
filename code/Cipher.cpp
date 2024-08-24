@@ -8,6 +8,8 @@ Cipher::Cipher() {
     // length of key determines length of array
     keyLgth = key.length();
     keyToInt = new int[keyLgth];
+
+    wordToInt = nullptr;
 }
 
 Cipher::~Cipher() {
@@ -25,11 +27,11 @@ std::string Cipher::scramble(std::string wordToEncrypt) {
     for (int i = 0; i < keyLgth; i++) {
         int asciiVal = (int)key[i] - MIN_ASCII_VAL;
         keyToInt[i] = asciiVal;
-        std::cout << asciiVal << std::endl;
     }
 
     // 2.) convert word-to-encrypt also, to integers in base 26 (0 - 25); integer array
     wordLgth = wordToEncrypt.length();
+    wordToInt = new int[wordLgth];
     for (int i = 0; i < wordLgth; i++) {
         int asciiVal = (int)wordToEncrypt[i] - MIN_ASCII_VAL;
         wordToInt[i] = asciiVal;
@@ -49,10 +51,15 @@ std::string Cipher::scramble(std::string wordToEncrypt) {
     // mod 26 -------------------------------
     // = 10 2 14 15 6 4 18 5 4 7 0 1 17 22
     // --> convert back to string (add 97)
-    // k c o p g g s f e h a b r w
-    // encrypted word: bob loves apples --> kcopggsfehabrw
+    // k c o p g e s f e h a b r w
+    // encrypted word: bob loves apples --> kcopgesfehabrw
+    // ~ Disclaimer: I probably did some of this math wrong on paper, but I trust my code ~
+    std::string finalString;
     for (int i = 0; i < wordLgth; i++) {
-
+        int sumOfAscii = keyToInt[i % keyLgth] + wordToInt[i];
+        int sumMod26 = sumOfAscii % 26;
+        finalString += (char)sumMod26 + MIN_ASCII_VAL;
     }
-    return "temp";
+
+    return finalString;
 }
