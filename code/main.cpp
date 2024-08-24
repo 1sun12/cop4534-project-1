@@ -17,7 +17,7 @@ int main() {
 
   //fm.printInputFile();
   //fm.writeRawData();
-  cp.scramble("yahoo");
+  cp.scramble("boblovesapples");
 
   return 0;
 }
