@@ -11,6 +11,7 @@ class Cipher {
         std::string key;
         int keyLgth;
         int* keyToInt; // dynamic allocated array of integers
+        int* wordToInt; // dynamic allocated array of integers
 };
 
 #endif
