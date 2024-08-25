@@ -9,6 +9,8 @@
 #include "FileManager.hpp"
 #include "RandomPassGen.hpp"
 #include "Cipher.hpp"
+#include "HashTable.hpp"
+#include "User.hpp"
 
 int main() {
   FileManager fm;
