@@ -1,5 +1,3 @@
-
-
 #include "User.hpp"
 
 User::User() {
@@ -22,11 +20,3 @@ void User::setName(std::string a) {
 void User::setPw(std::string a) {
     this->password = a;
 }
-
-/*
-std::string getName();
-        std::string getPw();
-        void setName(std::string);
-        void setPw(std::string);
-*/
-

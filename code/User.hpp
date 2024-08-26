@@ -4,7 +4,8 @@
 
 #include <iostream>
 
-class User {
+// data container class
+class User { 
     public:
         User();
         std::string getName();
