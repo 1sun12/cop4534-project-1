@@ -1,5 +1,9 @@
 #include "HashTable.hpp"
 
 HashTable::HashTable() {
-    // constructor
+    table = new std::string[TABLE_SIZE];
+}
+
+HashTable::~HashTable() {
+    delete[] table;
 }
