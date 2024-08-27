@@ -39,5 +39,9 @@ int main() {
   std::cout << "Place: " << somePlaceInTable1 << std::endl;
   std::cout << "Data {\n"; ht.printAt(somePlaceInTable1); std::cout << "}";
 
+  std::cout << "\n\n\n";
+
+  ht.print();
+
   return 0;
 }

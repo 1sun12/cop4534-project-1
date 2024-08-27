@@ -15,6 +15,7 @@ class LinkedList {
     public:
         LinkedList();
         ~LinkedList();
+        Node* getHead();
         void insert(User);
         void printList();
     private:

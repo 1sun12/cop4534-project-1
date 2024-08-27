@@ -15,6 +15,10 @@ LinkedList::~LinkedList() {
     }
 }
 
+Node* LinkedList::getHead() {
+    return head;
+}
+
 void LinkedList::insert(User user) {
     Node* newItem = new Node(user);
 

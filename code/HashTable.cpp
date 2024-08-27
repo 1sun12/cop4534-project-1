@@ -44,3 +44,11 @@ int HashTable::insert(User user) {
 void HashTable::printAt(int index) {
     table[index].printList();
 }
+
+void HashTable::print() {
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (table[i].getHead() != nullptr) {
+            table[i].printList();
+        }
+    }
+}

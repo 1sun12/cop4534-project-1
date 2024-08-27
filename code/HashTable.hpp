@@ -14,6 +14,7 @@ class HashTable {
         void remove(std::string); // remove user from table given their username
         User search(); // find and return a user in the table
         void printAt(int);
+        void print();
     private:
         int const MIN_ASCII_VAL = 97;
         LinkedList* table; // array -> linked lists / buckets -> Users
