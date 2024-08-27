@@ -29,10 +29,15 @@ int main() {
 
   //ht.insert(tempUser);
 
-  ll.insert(tempUser0);
-  ll.insert(tempUser1);
-  ll.insert(tempUser2);
-  ll.printList();
+  int somePlaceInTable0 = ht.insert(tempUser0);
+  int somePlaceInTable1 = ht.insert(tempUser1);
+  ht.insert(tempUser0);
+
+  std::cout << "Place: " << somePlaceInTable0 << std::endl;
+  std::cout << "Data {\n"; ht.printAt(somePlaceInTable0); std::cout << "}";
+
+  std::cout << "Place: " << somePlaceInTable1 << std::endl;
+  std::cout << "Data {\n"; ht.printAt(somePlaceInTable1); std::cout << "}";
 
   return 0;
 }

@@ -8,7 +8,7 @@ HashTable::~HashTable() {
     delete[] table;
 }
 
-void HashTable::insert(User user) {
+int HashTable::insert(User user) {
     int nameSum = 0;
     int pwSum = 0;
     int uniqueR = 0;
@@ -37,4 +37,10 @@ void HashTable::insert(User user) {
 
     // 3.) insert into table at unique spot, at tail of it's respective bucket / linked-list
     table[placeInTable].insert(user);
+
+    return placeInTable;
+}
+
+void HashTable::printAt(int index) {
+    table[index].printList();
 }
