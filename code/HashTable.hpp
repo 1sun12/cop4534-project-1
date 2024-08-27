@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "User.hpp"
+#include "LinkedList.hpp"
 
 class HashTable {
     public:
@@ -14,7 +15,7 @@ class HashTable {
         User search(); // find and return a user in the table
     private:
         int const MIN_ASCII_VAL = 97;
-        User* table;
+        User* table; // array -> linked lists / buckets -> Users
         int const TABLE_SIZE = 88801;
 };
 
