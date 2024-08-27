@@ -14,7 +14,7 @@ class HashTable {
         User search(); // find and return a user in the table
     private:
         int const MIN_ASCII_VAL = 97;
-        std::string* table;
+        User* table;
         int const TABLE_SIZE = 88801;
 };
 
