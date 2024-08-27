@@ -48,6 +48,7 @@ void HashTable::printAt(int index) {
 void HashTable::print() {
     for (int i = 0; i < TABLE_SIZE; i++) {
         if (table[i].getHead() != nullptr) {
+            std::cout << "Item Index: " << i << std::endl;
             table[i].printList();
         }
     }

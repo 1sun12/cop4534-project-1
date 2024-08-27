@@ -22,6 +22,6 @@ void User::setPw(std::string a) {
 }
 
 void User::print() {
-    std::cout << "\tUsername: " << "\t" + getName() << std::endl;
-    std::cout << "\tPassword: " << "\t" + getPw() << std::endl;
+    std::cout << "\t\tUsername: " << "\t\t" + getName() << std::endl;
+    std::cout << "\t\tPassword: " << "\t\t" + getPw() << std::endl;
 }
