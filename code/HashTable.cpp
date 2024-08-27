@@ -1,7 +1,7 @@
 #include "HashTable.hpp"
 
 HashTable::HashTable() {
-    table = new User[TABLE_SIZE];
+    table = new LinkedList[TABLE_SIZE]();
 }
 
 HashTable::~HashTable() {
@@ -35,6 +35,6 @@ void HashTable::insert(User user) {
     // 2.) modulos unique integer
     placeInTable = uniqueR % TABLE_SIZE;
 
-    // 3.) insert into table
-    table[placeInTable] = user;
+    // 3.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    table[placeInTable].insert(user);
 }
