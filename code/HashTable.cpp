@@ -35,8 +35,14 @@ int HashTable::insert(User user) {
     // 2.) modulos unique integer
     placeInTable = uniqueR % TABLE_SIZE;
 
-    // 3.) insert into table at unique spot, at tail of it's respective bucket / linked-list
-    table[placeInTable].insert(user);
+    
+    // 3.) scramble / encrypt the data before inserting
+    std::string encryptedName = cipher.scramble(user.getName());
+    std::string encryptedPass = cipher.scramble(user.getPw());
+
+    // 4.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    User temp(encryptedName, encryptedPass);
+    table[placeInTable].insert(temp);
 
     return placeInTable;
 }
@@ -68,8 +74,12 @@ int HashTable::insert(std::string name, std::string pass) {
     // 2.) modulos unique integer
     placeInTable = uniqueR % TABLE_SIZE;
 
-    // 3.) insert into table at unique spot, at tail of it's respective bucket / linked-list
-    User temp(name, pass);
+    // 3.) scramble / encrypt the data before inserting
+    std::string encryptedName = cipher.scramble(name);
+    std::string encryptedPass = cipher.scramble(pass);
+
+    // 4.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    User temp(encryptedName, encryptedPass);
     table[placeInTable].insert(temp);
 
     return placeInTable;

@@ -4,6 +4,7 @@
 #include <iostream>
 #include "User.hpp"
 #include "LinkedList.hpp"
+#include "Cipher.hpp"
 
 class HashTable {
     public:
@@ -16,6 +17,7 @@ class HashTable {
         void printAt(int);
         void print();
     private:
+        Cipher cipher;
         int const MIN_ASCII_VAL = 97;
         LinkedList* table; // array -> linked lists / buckets -> Users
         int const TABLE_SIZE = 88801;
