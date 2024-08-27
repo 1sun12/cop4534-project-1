@@ -41,6 +41,40 @@ int HashTable::insert(User user) {
     return placeInTable;
 }
 
+int HashTable::insert(std::string name, std::string pass) {
+    int nameSum = 0;
+    int pwSum = 0;
+    int uniqueR = 0;
+    int placeInTable = 0;
+
+    // 1.) convert name and password to unique integer representation
+    // accomplished by converting each character to ascii and adding up their values
+    
+    // convert name
+    for (long unsigned int i = 0; i < name.length(); i++) {
+        int asciiVal = (int)name[i] - MIN_ASCII_VAL;
+        nameSum += asciiVal;
+    }
+
+    // convert pw
+    for (long unsigned int i = 0; i < pass.length(); i++) {
+        int asciiVal = (int)pass[i] - MIN_ASCII_VAL;
+        pwSum += asciiVal;
+    }
+
+    // sum unique representations; name + pw
+    uniqueR = nameSum + pwSum;
+
+    // 2.) modulos unique integer
+    placeInTable = uniqueR % TABLE_SIZE;
+
+    // 3.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    User temp(name, pass);
+    table[placeInTable].insert(temp);
+
+    return placeInTable;
+}
+
 void HashTable::printAt(int index) {
     table[index].printList();
 }

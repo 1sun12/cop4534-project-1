@@ -33,7 +33,8 @@ int main() {
   ht.insert(tempUser0);
   ht.insert(tempUser1);
   ht.insert(tempUser2);
-
+  ht.insert("rogue", "alskdjfslkfj");
+  
   ht.print();
 
   return 0;

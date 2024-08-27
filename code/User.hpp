@@ -8,6 +8,7 @@
 class User { 
     public:
         User();
+        User(std::string, std::string);
         std::string getName();
         std::string getPw();
         void setName(std::string);

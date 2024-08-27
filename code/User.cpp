@@ -5,6 +5,11 @@ User::User() {
     this->password = "";
 }
 
+User::User(std::string a, std::string b) {
+    this->name = a;
+    this->password = b;
+}
+
 std::string User::getName() {
     return this->name;
 }
