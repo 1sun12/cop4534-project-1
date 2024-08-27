@@ -18,24 +18,31 @@ int main() {
   RandomPassGen gm;
   Cipher cp;
   HashTable ht;
-  User tempUser0; tempUser0.setName("bob"); tempUser0.setPw("abcwerkjdfo");
-  User tempUser1; tempUser1.setName("job"); tempUser1.setPw("abcwerkoiwe");
-  User tempUser2; tempUser2.setName("rob"); tempUser2.setPw("absdlfkjllk");
   LinkedList ll;
 
-  //fm.printInputFile();
-  //fm.writeRawData();
-  //std::cout << cp.scramble("banana") << std::endl;
+  fm.writeRawData();
+  fm.openRawData();
 
-  //ht.insert(tempUser);
+  while(true) {
+    std::string line = fm.getLineRawData();
+    // eof was reached; break loop
+    if (line == "0") {break;}
+    std::istringstream iss(line);
+    std::string name, pass;
+    iss >> name >> pass;
 
-  ht.insert(tempUser0);
-  ht.insert(tempUser0);
-  ht.insert(tempUser1);
-  ht.insert(tempUser2);
-  ht.insert("rogue", "alskdjfslkfj");
-  
+  // convert name to all lower-case
+  name = cp.toLower(name);
+
+    std::string encName = cp.scramble(name);
+    std::string encPass = cp.scramble(pass);
+
+    User user(encName, encPass);
+
+    ht.insert(user);
+  }
+
   ht.print();
-
+  
   return 0;
 }

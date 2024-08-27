@@ -63,3 +63,9 @@ std::string Cipher::scramble(std::string wordToEncrypt) {
 
     return finalString;
 }
+
+std::string Cipher::toLower(std::string str) {
+    std::transform(str.begin(), str.end(), str.begin(),
+               [](unsigned char c) { return std::tolower(c); });
+    return str;
+}
