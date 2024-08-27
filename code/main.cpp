@@ -16,10 +16,14 @@ int main() {
   FileManager fm;
   RandomPassGen gm;
   Cipher cp;
+  HashTable ht;
+  User tempUser; tempUser.setName("bob"); tempUser.setPw("abcwerkjdfo");
 
   //fm.printInputFile();
   //fm.writeRawData();
   std::cout << cp.scramble("banana") << std::endl;
+
+  ht.insert(tempUser);
 
   return 0;
 }

@@ -13,8 +13,9 @@ class HashTable {
         void remove(std::string); // remove user from table given their username
         User search(); // find and return a user in the table
     private:
+        int const MIN_ASCII_VAL = 97;
         std::string* table;
-        int const TABLE_SIZE = 100;
+        int const TABLE_SIZE = 88801;
 };
 
 #endif
