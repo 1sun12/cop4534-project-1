@@ -40,4 +40,7 @@ void LinkedList::printList() {
         nodeToPrint->data.print();
         nodeToPrint = nodeToPrint->next;
     }
+
+    // print last node, since while loop stops
+    nodeToPrint->data.print();
 }
