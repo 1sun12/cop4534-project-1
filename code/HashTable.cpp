@@ -1,18 +1,18 @@
 #include "HashTable.hpp"
 
 HashTable::HashTable() {
-    table = new LinkedList[TABLE_SIZE]();
+    linkedL = new LinkedList[TABLE_SIZE]();
 }
 
 HashTable::~HashTable() {
-    delete[] table;
+    delete[] linkedL;
 }
 
 int HashTable::insert(User user) {
     int nameSum = 0;
     int pwSum = 0;
     int uniqueR = 0;
-    int placeInTable = 0;
+    int placeInlinkedL = 0;
 
     // 1.) convert name and password to unique integer representation
     // accomplished by converting each character to ascii and adding up their values
@@ -33,25 +33,25 @@ int HashTable::insert(User user) {
     uniqueR = nameSum + pwSum;
 
     // 2.) modulos unique integer
-    placeInTable = uniqueR % TABLE_SIZE;
+    placeInlinkedL = (uniqueR % TABLE_SIZE);
 
     
     // 3.) scramble / encrypt the data before inserting
     std::string encryptedName = cipher.scramble(user.getName());
     std::string encryptedPass = cipher.scramble(user.getPw());
 
-    // 4.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    // 4.) insert into linkedL at unique spot, at tail of it's respective bucket / linked-list
     User temp(encryptedName, encryptedPass);
-    table[placeInTable].insert(temp);
+    linkedL[placeInlinkedL].insert(temp);
 
-    return placeInTable;
+    return placeInlinkedL;
 }
 
 int HashTable::insert(std::string name, std::string pass) {
     int nameSum = 0;
     int pwSum = 0;
     int uniqueR = 0;
-    int placeInTable = 0;
+    int placeInlinkedL = 0;
 
     // 1.) convert name and password to unique integer representation
     // accomplished by converting each character to ascii and adding up their values
@@ -72,28 +72,28 @@ int HashTable::insert(std::string name, std::string pass) {
     uniqueR = nameSum + pwSum;
 
     // 2.) modulos unique integer
-    placeInTable = uniqueR % TABLE_SIZE;
+    placeInlinkedL = (uniqueR % TABLE_SIZE);
 
     // 3.) scramble / encrypt the data before inserting
     std::string encryptedName = cipher.scramble(name);
     std::string encryptedPass = cipher.scramble(pass);
 
-    // 4.) insert into table at unique spot, at tail of it's respective bucket / linked-list
+    // 4.) insert into linkedL at unique spot, at tail of it's respective bucket / linked-list
     User temp(encryptedName, encryptedPass);
-    table[placeInTable].insert(temp);
+    linkedL[placeInlinkedL].insert(temp);
 
-    return placeInTable;
+    return placeInlinkedL;
 }
 
 void HashTable::printAt(int index) {
-    table[index].printList();
+    linkedL[index].printList();
 }
 
 void HashTable::print() {
     for (int i = 0; i < TABLE_SIZE; i++) {
-        if (table[i].getHead() != nullptr) {
+        if (linkedL[i].getHead() != nullptr) {
             std::cout << "Item Index: " << i << std::endl;
-            table[i].printList();
+            linkedL[i].printList();
         }
     }
 }

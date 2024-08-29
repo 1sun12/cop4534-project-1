@@ -31,8 +31,8 @@ int main() {
     std::string name, pass;
     iss >> name >> pass;
 
-  // convert name to all lower-case
-  name = cp.toLower(name);
+    // convert name to all lower-case
+    name = cp.toLower(name);
 
     std::string encName = cp.scramble(name);
     std::string encPass = cp.scramble(pass);

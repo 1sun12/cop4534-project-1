@@ -19,7 +19,7 @@ class HashTable {
     private:
         Cipher cipher;
         int const MIN_ASCII_VAL = 97;
-        LinkedList* table; // array -> linked lists / buckets -> Users
+        LinkedList* linkedL; // array -> linked lists / buckets -> Users
         int const TABLE_SIZE = 88801;
 };
 
