@@ -12,6 +12,7 @@
 #include "HashTable.hpp"
 #include "User.hpp"
 #include "LinkedList.hpp"
+#include "Decipher.hpp"
 
 int main() {
   FileManager fm;
@@ -19,6 +20,7 @@ int main() {
   Cipher cp;
   HashTable ht;
   LinkedList ll;
+  Decipher dp;
 
   fm.writeRawData();
   fm.openRawData();
@@ -31,11 +33,16 @@ int main() {
     std::string name, pass;
     iss >> name >> pass;
 
+    if (name == "JOHNSON") {break;}
     // convert name to all lower-case
     name = cp.toLower(name);
 
     std::string encName = cp.scramble(name);
     std::string encPass = cp.scramble(pass);
+
+    // print decryption to terminal
+    dp.setKey("jones");
+    std::cout << "decryption: " << dp.decrypt(encName) << std::endl;
 
     User user(encName, encPass);
 

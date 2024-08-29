@@ -24,17 +24,21 @@ Cipher::~Cipher() {
 
 std::string Cipher::scramble(std::string wordToEncrypt) {
     // 1.) convert original key to integers in base 26 (0 - 25); integer array
+    std::cout << "Encrypt Key" << std::endl;
     for (int i = 0; i < keyLgth; i++) {
         int asciiVal = (int)key[i] - MIN_ASCII_VAL;
         keyToInt[i] = asciiVal;
+        std::cout << asciiVal << std::endl;
     }
 
     // 2.) convert word-to-encrypt also, to integers in base 26 (0 - 25); integer array
+    std::cout << "Encrypt Word" << std::endl;
     wordLgth = wordToEncrypt.length();
     wordToInt = new int[wordLgth];
     for (int i = 0; i < wordLgth; i++) {
         int asciiVal = (int)wordToEncrypt[i] - MIN_ASCII_VAL;
         wordToInt[i] = asciiVal;
+        std::cout << asciiVal << std::endl;
     }
 
     // 3.) both the key and word are in ascii form; add their values and mod 26

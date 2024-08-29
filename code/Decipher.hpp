@@ -10,6 +10,7 @@ class Decipher {
         void setKey(std::string);
         std::string decrypt(std::string);
     private:
+        int const MIN_ASCII_VAL = 97;
         std::string key;
 };
 
