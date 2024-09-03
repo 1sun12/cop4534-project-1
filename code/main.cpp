@@ -33,7 +33,7 @@ int main() {
     std::string name, pass;
     iss >> name >> pass;
 
-    if (name == "JOHNSON") {break;}
+    if (name == "DAVIS") {break;}
     // convert name to all lower-case
     name = cp.toLower(name);
 
@@ -42,6 +42,7 @@ int main() {
 
     // print decryption to terminal
     dp.setKey("jones");
+    std::cout << "encryption: " << name << std::endl;
     std::cout << "decryption: " << dp.decrypt(encName) << std::endl;
 
     User user(encName, encPass);

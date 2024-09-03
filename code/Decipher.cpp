@@ -20,19 +20,15 @@ std::string Decipher::decrypt(std::string wordToDecrypt) {
     std::string finalString;
 
     // 1.) convert key to ascii values
-    std::cout << "Decrypt Key" << std::endl;
     for (int i = 0; i < keyLgth; i++) {
-        int asciiVal = (int)key[i] - MIN_ASCII_VAL + 1;
+        int asciiVal = (int)key[i] - MIN_ASCII_VAL;
         keyToInt[i] = asciiVal;
-        std::cout << asciiVal << std::endl;
     }
 
     // 2.) convert wordToDecrypt also, to integers in base 26 (0 - 25); integer array
-    std::cout << "Decrypt Word" << std::endl;
     for (int i = 0; i < wordLgth; i++) {
         int asciiVal = (int)wordToDecrypt[i] - MIN_ASCII_VAL;
         wordToInt[i] = asciiVal;
-        std::cout << asciiVal << std::endl;
     }
 
     for (int i = 0; i < wordLgth; i++) {
