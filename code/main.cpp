@@ -32,8 +32,7 @@ int main() {
     std::istringstream iss(line);
     std::string name, pass;
     iss >> name >> pass;
-
-    if (name == "DAVIS") {break;}
+    
     // convert name to all lower-case
     name = cp.toLower(name);
 
