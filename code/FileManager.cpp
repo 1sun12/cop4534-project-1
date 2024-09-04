@@ -2,10 +2,6 @@
 #include "FileManager.hpp"
 
 FileManager::FileManager() {
-    inFile = "../names.txt";
-    inRawData = "rawdata.txt";
-    outRawFile = "rawdata.txt";
-
     openInputFile();
 
     while (!ifs.is_open()) {
@@ -20,7 +16,7 @@ void FileManager::writeRawData() {
     std::string currLine = "";
     std::string currName = "";
     std::string password = "";
-    ofs.open(outRawFile);
+    ofs.open(OUT_RAW_DATA);
 
     // write all input file data to rawdata
     while(std::getline(ifs, currLine)) {
@@ -31,6 +27,10 @@ void FileManager::writeRawData() {
     
         ofs << currName << " " << password << std::endl;
     }
+}
+
+void FileManager::writeEncryptedData() {
+    // code...
 }
 
 std::string FileManager::getLineRawData() {
@@ -45,12 +45,12 @@ std::string FileManager::getLineRawData() {
 
 void FileManager::openInputFile() {
     ifs.close();
-    ifs.open(inFile);
+    ifs.open(IN_FILE);
 }
 
 void FileManager::openRawData() {
     ifs.close();
-    ifs.open(inRawData);
+    ifs.open(IN_RAW_DATA);
 }
 
 void FileManager::printInputFile() {

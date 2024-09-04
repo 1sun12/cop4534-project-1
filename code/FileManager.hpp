@@ -10,6 +10,7 @@ class FileManager {
     public:
         FileManager();
         void writeRawData();
+        void writeEncryptedData();
         std::string getLineRawData();
         void openRawData();
         void openInputFile();
@@ -18,10 +19,16 @@ class FileManager {
         std::ifstream ifs;
         std::ofstream ofs;
         std::istringstream iss;
-        std::string inFile;
-        std::string inRawData;
-        std::string outRawFile;
+        std::string IN_FILE = "../names.txt";
+        std::string IN_RAW_DATA = "rawdata.txt";
+        std::string OUT_RAW_DATA = "rawdata.txt";
+        std::string IN_ENCRYPTED_DATA = "encrypteddata.txt";
+        std::string OUT_ENCRYPTED_DATA = "encrypteddata.txt";
         RandomPassGen rpg;
+
+    //     inFile = "../names.txt";
+    // inRawData = "rawdata.txt";
+    // outRawFile = "rawdata.txt";
         
 };
 
