@@ -19,8 +19,9 @@ class HashTable {
     private:
         Cipher cipher;
         int const MIN_ASCII_VAL = 97;
-        LinkedList* linkedL; // array -> linked lists / buckets -> Users
+        LinkedList* table; // array -> linked lists / buckets -> Users
         int const TABLE_SIZE = 88801;
+        int hash(std::string);
 };
 
 #endif
