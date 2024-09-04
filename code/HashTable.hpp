@@ -12,8 +12,8 @@ class HashTable {
         ~HashTable();
         int insert(User); // argument is user object
         int insert(std::string, std::string); // argument is username and password; user ingredients
+        User search(std::string); // find and return a user in the table
         void remove(std::string); // remove user from table given their username
-        User search(); // find and return a user in the table
         void printAt(int);
         void print();
     private:
@@ -22,6 +22,7 @@ class HashTable {
         LinkedList* table; // array -> linked lists / buckets -> Users
         int const TABLE_SIZE = 88801;
         int hash(std::string);
+        User searchHelper(Node*, std::string);
 };
 
 #endif

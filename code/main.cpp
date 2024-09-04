@@ -47,8 +47,13 @@ int main() {
     ht.insert(user);
   }
 
+  // Testing search
+    std::cout << "searching smith: " << ht.search("smith").getName() << std::endl;
+    std::cout << "searching brown: " << ht.search("brown").getName() << std::endl;
+    std::cout << "searching asdf: " << ht.search("asdf").getName() << std::endl;
+
   // print entire hash-table
-  ht.print();
+  //ht.print();
   
   return 0;
 }
