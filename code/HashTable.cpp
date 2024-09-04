@@ -11,11 +11,30 @@ HashTable::~HashTable() {
 int HashTable::insert(User user) {
     int placeInTable = hash(user.getName());
 
+    std::cout << "Name b4 Insert: " << user.getName() << std::endl;
+
     // scramble / encrypt the data before inserting
     std::string encryptedPass = cipher.scramble(user.getPw());
 
-    // insert into table at unique spot, at tail of it's respective bucket / linked-list
+    std::cout << "Enc. Pw b4 Insert: " << encryptedPass << std::endl;
+
+    // insert into table at unique hash
     User temp(user.getName(), encryptedPass);
+    table[placeInTable].insert(temp);
+
+    std::cout << "Place In T: " << placeInTable << std::endl;
+
+    return placeInTable;
+}
+
+int HashTable::insert(std::string name, std::string pass) {
+    int placeInTable = hash(name);
+
+    // scramble / encrypt the data before inserting
+    std::string encryptedPass = cipher.scramble(pass);
+
+    // insert into table at unique hash
+    User temp(name, encryptedPass);
     table[placeInTable].insert(temp);
 
     return placeInTable;
@@ -36,44 +55,6 @@ int HashTable::hash(std::string wordToHash) {
     }
 
     return sum % TABLE_SIZE;
-}
-
-int HashTable::insert(std::string name, std::string pass) {
-    int nameSum = 0;
-    int pwSum = 0;
-    int uniqueR = 0;
-    int placeInTable = 0;
-
-    // 1.) convert name and password to unique integer representation
-    // accomplished by converting each character to ascii and adding up their values
-    
-    // convert name
-    for (long unsigned int i = 0; i < name.length(); i++) {
-        int asciiVal = (int)name[i] - MIN_ASCII_VAL;
-        nameSum += asciiVal;
-    }
-
-    // convert pw
-    for (long unsigned int i = 0; i < pass.length(); i++) {
-        int asciiVal = (int)pass[i] - MIN_ASCII_VAL;
-        pwSum += asciiVal;
-    }
-
-    // sum unique representations; name + pw
-    uniqueR = nameSum + pwSum;
-
-    // 2.) modulos unique integer
-    placeInTable = (uniqueR % TABLE_SIZE);
-
-    // 3.) scramble / encrypt the data before inserting
-    std::string encryptedName = cipher.scramble(name);
-    std::string encryptedPass = cipher.scramble(pass);
-
-    // 4.) insert into table at unique spot, at tail of it's respective bucket / linked-list
-    User temp(encryptedName, encryptedPass);
-    table[placeInTable].insert(temp);
-
-    return placeInTable;
 }
 
 void HashTable::printAt(int index) {

@@ -1,7 +1,7 @@
 /***************************************************************
-  Student Name:
-  File Name:
-  Assignment number
+  Student Name:       Regan O'Donnell
+  File Name:          main.cpp
+  Assignment number:  Project 1
 
   Other comments regarding the file - description of why it is there, etc.
 ***************************************************************/
@@ -26,29 +26,28 @@ int main() {
   fm.openRawData();
 
   while(true) {
+    // get line in raw-data.txt
     std::string line = fm.getLineRawData();
+
     // eof was reached; break loop
     if (line == "0") {break;}
+
+    // create a string stream to seperate line by white-space
     std::istringstream iss(line);
     std::string name, pass;
     iss >> name >> pass;
     
-    // convert name to all lower-case
+    // convert name to all lower-case (if necessary)
     name = cp.toLower(name);
 
-    std::string encName = cp.scramble(name);
-    std::string encPass = cp.scramble(pass);
+    // create User-obj with name and randomly generated password
+    User user (name, pass);
 
-    // print decryption to terminal
-    dp.setKey("jones");
-    std::cout << "encryption: " << name << std::endl;
-    std::cout << "decryption: " << dp.decrypt(encName) << std::endl;
-
-    User user(encName, encPass);
-
+    // insert into hash-table
     ht.insert(user);
   }
 
+  // print entire hash-table
   ht.print();
   
   return 0;
