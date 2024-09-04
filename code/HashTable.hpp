@@ -13,7 +13,6 @@ class HashTable {
         int insert(User); // argument is user object
         int insert(std::string, std::string); // argument is username and password; user ingredients
         User search(std::string); // find and return a user in the table
-        void remove(std::string); // remove user from table given their username
         void printAt(int);
         void print();
     private:
