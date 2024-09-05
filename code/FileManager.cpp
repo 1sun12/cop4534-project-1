@@ -31,7 +31,6 @@ void FileManager::writeRawData() {
 }
 
 void FileManager::writeEncryptedData(std::string data) {
-    // I forgot how to write deep-copy constructors :'), pass by reference will do
     ofs.close();
     ofs.open(OUT_ENCRYPTED_DATA);
 

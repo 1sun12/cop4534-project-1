@@ -11,6 +11,8 @@
 #include "User.hpp"
 #include "Cipher.hpp"
 
+std::string const NAME1 = "smith", NAME3 = "williams", NAME5 = "brown", NAME7 = "miller", NAME9 = "moore";
+
 int main() {
   FileManager fm;
   HashTable ht;
@@ -39,18 +41,29 @@ int main() {
 
     // insert into hash-table
     ht.insert(user);
-
-    // write entire hash-table to a file
-    fm.writeEncryptedData(ht.toString());
   } 
 
-  // Testing search
-    std::cout << "searching smith: " << ht.search("smith").getName() << std::endl; // found
-    std::cout << "searching brown: " << ht.search("brown").getName() << std::endl; // found
-    std::cout << "searching asdf: " << ht.search("asdf").getName() << std::endl; // not found
+  // writing to encrypted output file
+    std::string encOut = "";
 
-  // print entire hash-table
-  //ht.print();
+    User user1 = ht.search(NAME1);
+    User user3 = ht.search(NAME3);
+    User user5 = ht.search(NAME5);
+    User user7 = ht.search(NAME7);
+    User user9 = ht.search(NAME9);
+
+    encOut += user1.getName() + " " + user1.getPw() + "\n";
+    encOut += user3.getName() + " " + user3.getPw() + "\n";
+    encOut += user5.getName() + " " + user5.getPw() + "\n";
+    encOut += user7.getName() + " " + user7.getPw() + "\n";
+    encOut += user9.getName() + " " + user9.getPw() + "\n";
+
+    //fm.writeEncryptedData(encOut);
+
+    // ================================================================
+    // =========================LEGAL==================================
+    std::cout << "~ Legal ~\n\n";
+    std::cout << "User\tPw(file)\tPw(table)\tResult";
   
   return 0;
 }
