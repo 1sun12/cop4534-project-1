@@ -47,6 +47,20 @@ std::string FileManager::getLineRawData() {
     }
 }
 
+std::string FileManager::getSpecificLineRawData(int lineNumber) {
+    std::string line = "";
+    ifs.close();
+    ifs.open(IN_RAW_DATA);
+    for (int i = 0; i < lineNumber - 1; i++) {
+        getline(ifs, line);
+    }
+
+    // grab the line we want
+    getline(ifs, line);
+
+    return line;
+}
+
 void FileManager::openInputFile() {
     ifs.close();
     ifs.open(IN_FILE);

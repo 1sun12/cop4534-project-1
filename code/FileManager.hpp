@@ -13,6 +13,7 @@ class FileManager {
         void writeRawData();
         void writeEncryptedData(std::string);
         std::string getLineRawData();
+        std::string getSpecificLineRawData(int);
         void openRawData();
         void openInputFile();
         void printInputFile();

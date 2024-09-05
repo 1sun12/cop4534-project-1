@@ -13,7 +13,7 @@ HEADERS = FileManager.hpp RandomPassGen.hpp User.hpp Cipher.hpp HashTable.hpp Li
 OBJS = $(SRCS:.cpp=.o)
 
 # Define the executable name
-TARGET = program1
+TARGET = cop4534-project-1
 
 # The default target, which will be executed when you run `make`
 all: $(TARGET)
