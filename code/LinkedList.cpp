@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          LinkedList.cpp
+  Assignment number:  Project 1
+
+    Object file for linked-list; some operations are inserting, searching, and some print functions
+***************************************************************/
+
 #include "LinkedList.hpp"
 
 LinkedList::LinkedList() {

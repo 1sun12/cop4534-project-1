@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          FileManager.hpp
+  Assignment number:  Project 1
+
+    FileManager header file
+***************************************************************/
+
 #ifndef H_FILEMANAGER
 #define H_FILEMANAGER
 

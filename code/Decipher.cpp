@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          Decipher.cpp
+  Assignment number:  Project 1
+
+    Responsible for decrypting the encrypted passwords in the hashtable
+***************************************************************/
+
 #include "Decipher.hpp"
 
 Decipher::Decipher() {

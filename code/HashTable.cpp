@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          HashTable.cpp
+  Assignment number:  Project 1
+
+    Responsible for managing an array of size 88,801 , where each index is a linked-list that can be inserted() into
+***************************************************************/
+
 #include "HashTable.hpp"
 
 HashTable::HashTable() {

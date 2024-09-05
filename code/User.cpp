@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          User.cpp
+  Assignment number:  Project 1
+
+    Data-container-like object class that helped me store names and passwords. A node in my linked-list is one of these user objects
+***************************************************************/
+
 #include "User.hpp"
 
 User::User() {

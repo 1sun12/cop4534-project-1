@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          RandomPassGen.hpp
+  Assignment number:  Project 1
+
+    RandomPassGen header file
+***************************************************************/
 
 #ifndef H_RANDOMPASSGEN
 #define H_RANDOMPASSGEN

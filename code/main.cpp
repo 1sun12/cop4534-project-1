@@ -3,7 +3,7 @@
   File Name:          main.cpp
   Assignment number:  Project 1
 
-  Other comments regarding the file - description of why it is there, etc.
+  All classes are collected here, tested, with results printed to the terminal
 ***************************************************************/
 
 #include "FileManager.hpp"

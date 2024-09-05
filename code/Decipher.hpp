@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          Decipher.hpp
+  Assignment number:  Project 1
+
+    Decipher header file
+***************************************************************/
+
 #ifndef H_DECIPHER
 #define H_DECIPHER
 

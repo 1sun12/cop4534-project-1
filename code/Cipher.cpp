@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          Cipher.cpp
+  Assignment number:  Project 1
+
+    this class is responsible for encrypting strings using the vigenere cipher with the key being jones
+***************************************************************/
+
 #include "Cipher.hpp"
 
 Cipher::Cipher() {

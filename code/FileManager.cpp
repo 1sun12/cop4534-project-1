@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          FileManager.cpp
+  Assignment number:  Project 1
+
+    Responsible for reading from input files, outputting to output files, some stringstream and io stuff
+***************************************************************/
 
 #include "FileManager.hpp"
 

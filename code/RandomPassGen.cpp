@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          RandomPassGen.cpp
+  Assignment number:  Project 1
+
+    Responsible for generating random 9-character-lowercase passwords for each entry name in the input-txt file
+***************************************************************/
 
 #include "RandomPassGen.hpp"
 

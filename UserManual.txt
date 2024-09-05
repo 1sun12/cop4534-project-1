@@ -1,0 +1,10 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          UserManual.txt
+  Assignment number:  Project 1
+***************************************************************/
+
+How To Use (Tested on Ubuntu LTS and CS-SSH.uwf.edu server):
+1.) cd into the "code" folder
+2.) type, "make run" in the terminal
+3.) results should be printed to the terminal

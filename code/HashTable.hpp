@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          HashTable.hpp
+  Assignment number:  Project 1
+
+    HashTable header file
+***************************************************************/
+
 #ifndef H_HASHTABLE
 #define H_HASHTABLE
 

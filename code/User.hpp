@@ -1,3 +1,10 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          User.hpp
+  Assignment number:  Project 1
+
+    User header file
+***************************************************************/
 
 #ifndef H_USER
 #define H_USER

@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          Cipher.hpp
+  Assignment number:  Project 1
+
+    Cipher header file
+***************************************************************/
+
 #ifndef H_CIPHER
 #define H_CIPHER
 

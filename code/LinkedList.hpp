@@ -1,3 +1,11 @@
+/***************************************************************
+  Student Name:       Regan O'Donnell
+  File Name:          LinkedList.hpp
+  Assignment number:  Project 1
+
+    LinkedList header file
+***************************************************************/
+
 #ifndef H_LINKEDLIST
 #define H_LINKEDLIST
 
