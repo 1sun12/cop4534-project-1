@@ -5,12 +5,13 @@
 #include <iostream>
 #include <sstream>
 #include "RandomPassGen.hpp"
+#include "HashTable.hpp"
 
 class FileManager {
     public:
         FileManager();
         void writeRawData();
-        void writeEncryptedData();
+        void writeEncryptedData(std::string);
         std::string getLineRawData();
         void openRawData();
         void openInputFile();

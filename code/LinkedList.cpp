@@ -40,14 +40,33 @@ void LinkedList::insert(User user) {
 
 void LinkedList::printList() {
     Node* nodeToPrint = head;
-    int counter = 0;
     while (nodeToPrint->next != nullptr) {
-        std::cout << "\tElement # " << counter++ << std::endl;
         nodeToPrint->data.print();
+        std::cout << " --> ";
         nodeToPrint = nodeToPrint->next;
     }
 
     // print last node, since while loop stops
-    std::cout << "\tElement # " << counter << std::endl;
     nodeToPrint->data.print();
+}
+
+std::string LinkedList::toString() {
+    std::string tooString = "";
+    Node* nodeToPrint = head;
+
+    if (nodeToPrint == nullptr) {
+        return "";
+    }
+
+    while (nodeToPrint->next != nullptr) {
+        tooString += nodeToPrint->data.toString() + " --> ";
+        nodeToPrint = nodeToPrint->next;
+    }
+
+    // print last node, since while loop stops
+    if (nodeToPrint != nullptr) {
+        tooString += nodeToPrint->data.toString();
+    }
+
+    return tooString;
 }

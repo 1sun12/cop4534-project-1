@@ -15,6 +15,7 @@ class HashTable {
         User search(std::string); // find and return a user in the table
         void printAt(int);
         void print();
+        std::string toString();
     private:
         Cipher cipher;
         int const MIN_ASCII_VAL = 97;

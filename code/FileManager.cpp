@@ -16,6 +16,7 @@ void FileManager::writeRawData() {
     std::string currLine = "";
     std::string currName = "";
     std::string password = "";
+    ofs.close();
     ofs.open(OUT_RAW_DATA);
 
     // write all input file data to rawdata
@@ -29,8 +30,12 @@ void FileManager::writeRawData() {
     }
 }
 
-void FileManager::writeEncryptedData() {
-    // code...
+void FileManager::writeEncryptedData(std::string data) {
+    // I forgot how to write deep-copy constructors :'), pass by reference will do
+    ofs.close();
+    ofs.open(OUT_ENCRYPTED_DATA);
+
+    ofs << data;
 }
 
 std::string FileManager::getLineRawData() {

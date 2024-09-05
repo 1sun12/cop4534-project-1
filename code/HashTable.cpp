@@ -90,3 +90,14 @@ void HashTable::print() {
         }
     }
 }
+
+std::string HashTable::toString() {
+    std::string tooString = "";
+    for (int i = 0; i < TABLE_SIZE; i++) {
+        if (table[i].getHead() != nullptr) {
+            tooString += table[i].toString() + "\n";
+        }
+    }
+
+    return tooString;
+}

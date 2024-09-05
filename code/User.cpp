@@ -30,3 +30,9 @@ void User::print() {
     std::cout << "\t\tUsername: " << "\t\t" + getName() << std::endl;
     std::cout << "\t\tPassword: " << "\t\t" + getPw() << std::endl;
 }
+
+std::string User::toString() {
+    std::string tooString = "";
+    tooString += getName() + " " + getPw();
+    return tooString;
+}

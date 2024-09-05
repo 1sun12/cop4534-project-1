@@ -14,6 +14,7 @@ class User {
         void setName(std::string);
         void setPw(std::string);
         void print();
+        std::string toString();
     private:
         std::string name;
         std::string password;

@@ -7,20 +7,14 @@
 ***************************************************************/
 
 #include "FileManager.hpp"
-#include "RandomPassGen.hpp"
-#include "Cipher.hpp"
 #include "HashTable.hpp"
 #include "User.hpp"
-#include "LinkedList.hpp"
-#include "Decipher.hpp"
+#include "Cipher.hpp"
 
 int main() {
   FileManager fm;
-  RandomPassGen gm;
-  Cipher cp;
   HashTable ht;
-  LinkedList ll;
-  Decipher dp;
+  Cipher cp;
 
   fm.writeRawData();
   fm.openRawData();
@@ -45,12 +39,15 @@ int main() {
 
     // insert into hash-table
     ht.insert(user);
-  }
+
+    // write entire hash-table to a file
+    fm.writeEncryptedData(ht.toString());
+  } 
 
   // Testing search
-    std::cout << "searching smith: " << ht.search("smith").getName() << std::endl;
-    std::cout << "searching brown: " << ht.search("brown").getName() << std::endl;
-    std::cout << "searching asdf: " << ht.search("asdf").getName() << std::endl;
+    std::cout << "searching smith: " << ht.search("smith").getName() << std::endl; // found
+    std::cout << "searching brown: " << ht.search("brown").getName() << std::endl; // found
+    std::cout << "searching asdf: " << ht.search("asdf").getName() << std::endl; // not found
 
   // print entire hash-table
   //ht.print();

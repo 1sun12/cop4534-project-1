@@ -18,6 +18,7 @@ class LinkedList {
         Node* getHead();
         void insert(User);
         void printList();
+        std::string toString();
     private:
         Node* head;
 };
