@@ -9,7 +9,7 @@
 #include "HashTable.hpp"
 
 HashTable::HashTable() {
-    table = new LinkedList[TABLE_SIZE]();
+    table = new LinkedList[TABLE_SIZE + 1]();
 }
 
 HashTable::~HashTable() {
@@ -68,20 +68,39 @@ User HashTable::searchHelper(Node* head, std::string name) {
 }
 
 int HashTable::hash(std::string wordToHash) {
-    int sum = 0;
+    /* Note for Prof. Coffey:
+    Thanks for our email chain about hashing! (~ Regan)
+    The algorithm I settled on was...
+
+    1.) convert name to asciiValues and find their product (multiply)
+    2.) divide product by TABLE_SIZE, to reduce size of number and avoid integer overflow
+        ~ Yes, even with a long int, I was getting overflows!
+    3.) using my cipher algo. , encrypt the name, and then convert this encryp. to asciiValues just as we did with the orig. name
+    4.) add the sum of these asciiValues to the product we found earlier
+    5.) (product of orig. ascii) + (sum of encryp. ascii)
+    6.) = indexInHashTable */
+
+    long int product = 1;
+
+    // Step 1.)
     for (long unsigned int i = 0; i < wordToHash.length(); i++) {
         int asciiVal = (int)wordToHash[i] - MIN_ASCII_VAL;
-        sum += asciiVal;
+        product *= asciiVal;
     }
 
-    // scramble the name and add; makes hashing more complex and spread even in table
+    // Step 2.)
+    product /= TABLE_SIZE;
+
+    // Step 3.)
     std::string wordEnc = cipher.scramble(wordToHash);
     for (long unsigned int i = 0; i < wordEnc.length(); i++) {
         int asciiVal = (int)wordEnc[i] - MIN_ASCII_VAL;
-        sum += asciiVal;
+        // Step 4 & 5.) 
+        product += asciiVal;
     }
 
-    int indexInHashTable = sum % TABLE_SIZE;
+    // Step 6.)
+    int indexInHashTable = product % TABLE_SIZE;
 
     return indexInHashTable;
 }
